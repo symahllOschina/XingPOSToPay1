@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wanding.xingpos"
+    android:versionCode="35"
+    android:versionName="1.3.6" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="27" />
+
+    <!-- 网络请求权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Zxing扫描权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 外存储读权限，构建语法需要用到此权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 读取联系人权限，上传联系人需要用到此权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+
+    <!-- GPS定位权限 用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 用于访问GPS定位 -->
+    <!-- 手机定位信息，用来为语义等功能提供定位，提供更精准的服务 -->
+    <!-- 定位信息是敏感信息，可通过Setting.setLocationEnable(false)关闭定位请求 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 星POS打印权限 -->
+    <uses-permission android:name="android.permission.MANAGE_NEWLAND" />
+    <uses-permission android:name="android.permission.MANAGE_NEWLANDUART3" />
+
+    <!-- 百度语音合成 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 浮动通知权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- 个推SDK权限配置开始 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 自定义权限 -->
+    <uses-permission android:name="getui.permission.GetuiService.com.wanding.xingpos" />
+
+    <permission
+        android:name="getui.permission.GetuiService.com.wanding.xingpos"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:name="com.wanding.xingpos.application.BaseApplication"
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name="com.wanding.xingpos.activity.WelcomeActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 配置的第三方参数属性 -->
+        <meta-data
+            android:name="PUSH_APPID"
+            android:value="uSCXX7C6UDAvVHEpJt63b4" /> <!-- 替换为第三方应用的APPID -->
+        <meta-data
+            android:name="PUSH_APPKEY"
+            android:value="TbPt8nTgAG9pLn2QEprKq" /> <!-- 替换为第三方应用的APPKEY -->
+        <meta-data
+            android:name="PUSH_APPSECRET"
+            android:value="76MjXnryAX86w2LRC8F5Z4" /> <!-- 替换为第三方应用的APPSECRET -->
+
+
+        <!-- 个推配置SDK核心服务 -->
+        <!-- android:permission在2.13.1.0版本后必须配置 -->
+        <service
+            android:name="com.igexin.sdk.PushService"
+            android:exported="false"
+            android:label="NotificationCenter"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:process=":pushservice" >
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.service.message" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="com.igexin.sdk.PushReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <!-- 以下三项为可选的action声明，可大大提高service存活率和消息到达速度 -->
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 自定义个推服务 -->
+        <service android:name="com.wanding.xingpos.getui.DemoIntentService" >
+        </service>
+        <service
+            android:name="com.wanding.xingpos.getui.GetuiPushService"
+            android:exported="true"
+            android:label="PushService"
+            android:process=":pushservice" >
+        </service>
+
+        <!-- 二维码扫描Activity -->
+        <activity
+            android:name="com.zijunlin.Zxing.Demo.CaptureActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- MainActivity -->
+        <activity
+            android:name="com.wanding.xingpos.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 管理员密码管理Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.UserSetPasswdActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 刷卡消费Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.CardPayActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 消费退款Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.CardRefundActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 预授权Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.AuthActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 分期Activity -->
+        <activity
+            android:name="com.wanding.xingpos.instalment.InstalmentActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 分期明细Activity -->
+        <activity
+            android:name="com.wanding.xingpos.instalment.InstalmentOrderDetailActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 分期查询退款Activity -->
+        <activity
+            android:name="com.wanding.xingpos.instalment.InstalmentOrderRefundActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 退款说明Activity -->
+        <activity
+            android:name="com.wanding.xingpos.instalment.InstalmentRefundHintActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 分期条件筛选界面 -->
+        <activity
+            android:name="com.wanding.xingpos.instalment.InstalmentScreenActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 扫码消费Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.ScanPayActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 支付成功提示Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.PaySuccessActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 扫码退款Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.ScanRefundActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 扫码退款成功Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.RefundSuccessActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 扫码查询Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.ScanQueryActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 核销劵Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.WriteOffActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 核销记录Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.WriteOffRecodeListActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wanding.xingpos.activity.CardVerificaRecodeActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 核销记录详情Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.WriteOffRecodeDetailActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 计次卡核销记录详情Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.NumCardRecodeDetailActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 优惠券核销记录详情Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.CouponsRecodeDetailActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 扫码预授权Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.ScanAuthActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 扫码预授权撤销Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.ScanAuthCancelActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 扫码预授权订单记录Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.ScanAuthRecodeListActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 扫码预授权订单详情Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.ScanAuthOrderDetailsActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+
+        <!-- 会员管理Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.MemberManageActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 会员查询Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.MemberQueryActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 会员充值Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.MemberTopUpCardCodeActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 会员充值记录Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.MemberTopUpRecodeListActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 会员充值记录详情Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.DepositRecodeDetailActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 会员充值Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.MemberTopUpActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 会员消费Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.MemberPayActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 会员消费记录Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.MemberPayRecodeListActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 会员消费记录Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.MemberPayRecodeDetailActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 会员付费购卡Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.BuyCardActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 会员付费购卡类型Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.BuyCardTypeActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 会员付费购卡记录Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.BuyCardRecodeListActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 会员付费购卡记录Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.BuyCardRecodeDetailActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 交易失败（包括支付失败，退款失败，查询失败）提示Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.PayErrorActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 重打印Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.AgainPrintActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 结算、交接班Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.ShiftActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 结算、交接班记录Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.ShiftRecordActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 结算、交接班记录详情Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.ShiftRecordDetailActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- （交易明细）订单列表Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.OrderListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- （交易明细）订单列表Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.CopyOfOrderListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 订单详情Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.OrderDetailsActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 汇总Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.SummaryActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 查询订单详情Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.QueryOrderDetailsActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 员工列表Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.StaffListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 添加员工Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.AddStaffActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 批量制劵Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.BatchSecurActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 批量制劵Activity —— 选择劵类型 -->
+        <activity
+            android:name="com.wanding.xingpos.activity.CouponTypeListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 设置Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.SettingActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 设置  支付通道选择Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.SetPayServiceActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 设置  打印设置界面(选择打印联数)Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.SetPrintNumActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 设置  默认支付金额设置Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.SetMoneyActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 设置 商户信息Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.BusinessDetailsActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 设置  关于悦收银 版本信息Activity -->
+        <activity
+            android:name="com.wanding.xingpos.activity.SetAboutAppActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wanding.xingpos.activity.TestLayout"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wanding.xingpos.activity.PrintTextActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wanding.xingpos.activity.TestWebView"
+            android:launchMode="standard"
+            android:screenOrientation="portrait" />
+        <!-- 添加replace属性> -->
+        <activity
+            android:name="com.newland.starpos.installmentsdk.MainActivity"
+            android:theme="@style/NldAppTheme" >
+
+            <!-- 把theme指定到这里 -->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+    </application>
+
+</manifest>

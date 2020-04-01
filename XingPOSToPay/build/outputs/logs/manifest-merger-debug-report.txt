@@ -1,0 +1,871 @@
+-- Merging decision tree log ---
+uses-permission#getui.permission.GetuiService.com.wanding.xingpos
+INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:59:5-86
+	android:name
+		INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:59:22-83
+permission#getui.permission.GetuiService.com.wanding.xingpos
+INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:61:5-63:55
+	android:protectionLevel
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:63:9-41
+	android:name
+		INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:62:9-70
+manifest
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:2:1-501:12
+INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:2:1-501:12
+INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:2:1-501:12
+INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:2:1-501:12
+MERGED from [com.trycatch.android:mysnackbar:1.2.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\mysnackbar-1.2.2.aar\d3508b3b2c3b70c788e95697cbedf7c4\AndroidManifest.xml:2:1-17:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\9c55e9506d3d2255a789bb85b06527a1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\3917f9f5a8ce4e67b95677e4ebba3e70\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\f39b1b95807035542114d88395208963\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\b3768464b2ff76d1934b0fc1e2da0ba3\AndroidManifest.xml:2:1-11:12
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:2:1-40:12
+MERGED from [org.xutils:xutils:3.5.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\xutils-3.5.1.aar\6e26c517a5f70f04e47a114f294502e2\AndroidManifest.xml:2:1-14:12
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\829e74336c41ad4e44c64a8eaefc52a7\AndroidManifest.xml:2:1-12:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\f03e76f7153e78babc0627466934a8f0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.8.0.aar\8c87a8f391e78e9198d9a1f3e4f12df2\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\8e9afa9c534e3a7e9174bf759392eb2b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\76de3b53c0b8e5b1250a6f94f7919bb7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\415ca401f99ccf167880821cb77a6cb0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\e4377b9f3073cf64fcc2ef598478acc6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\5aa6ecda1206945052b545b70de748fa\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\2c979196bdacbb0535c0d21b220619ab\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\c1ae1365adc5b5707faf7605629e8599\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\b42aaa168902c1a272e238346960ec69\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\3e7c290c4a19bfff4e903baa1ef2ffc1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\315d05ba9a449f24c9ab78502ecfbebc\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\9b48fd013c033b93f0a3bfd63a203639\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\1a6ce17049ff2073744154273bfdf814\AndroidManifest.xml:17:1-22:12
+INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:2:1-501:12
+INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:2:1-501:12
+INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:2:1-501:12
+	package
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:4:2-31
+		INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+		INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:2:1-501:12
+		INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:3:2-48
+	android:versionCode
+		INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:2:1-501:12
+		INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:8:5-67
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:12:5-67
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:12:5-67
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:8:22-64
+uses-permission#android.permission.CAMERA
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:10:5-81
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:10:22-62
+uses-feature#android.hardware.camera
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:11:2-57
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:11:16-54
+uses-feature#android.hardware.camera.autofocus
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:12:2-67
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:12:16-64
+uses-permission#android.permission.VIBRATE
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:13:2-62
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:18:5-66
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:18:5-66
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:13:19-60
+uses-permission#android.permission.FLASHLIGHT
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:14:4-67
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:14:21-65
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:17:5-81
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:15:5-81
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:15:5-81
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:17:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:19:2-76
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:16:5-80
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:16:5-80
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:19:19-74
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:20:5-21:41
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:19:5-84
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:19:5-84
+	tools:ignore
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:21:3-38
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:20:22-81
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:23:5-75
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:14:5-75
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:14:5-75
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:23:22-72
+uses-permission#android.permission.READ_CONTACTS
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:25:2-68
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:25:19-66
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:27:5-79
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:20:5-79
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:20:5-79
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:27:22-76
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:28:5-79
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:28:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:30:5-76
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:21:5-76
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:21:5-76
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:30:22-73
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:32:5-76
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:32:22-73
+uses-permission#android.permission.ACCESS_MOCK_LOCATION
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:33:5-34:54
+	tools:ignore
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:34:3-51
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:33:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:37:6-82
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:37:23-79
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:41:3-76
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:41:20-74
+uses-permission#android.permission.MANAGE_NEWLAND
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:43:3-70
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:43:20-68
+uses-permission#android.permission.MANAGE_NEWLANDUART3
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:44:5-77
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:44:22-75
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:47:5-80
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:47:22-77
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:48:5-49:41
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:17:5-73
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:17:5-73
+	tools:ignore
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:49:3-38
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:48:22-70
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:52:5-77
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:52:22-75
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:55:5-81
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:55:22-78
+uses-permission#android.permission.GET_TASKS
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:57:5-68
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:57:22-65
+application
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:65:5-499:19
+MERGED from [com.trycatch.android:mysnackbar:1.2.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\mysnackbar-1.2.2.aar\d3508b3b2c3b70c788e95697cbedf7c4\AndroidManifest.xml:11:5-15:19
+MERGED from [com.trycatch.android:mysnackbar:1.2.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\mysnackbar-1.2.2.aar\d3508b3b2c3b70c788e95697cbedf7c4\AndroidManifest.xml:11:5-15:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\b3768464b2ff76d1934b0fc1e2da0ba3\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\b3768464b2ff76d1934b0fc1e2da0ba3\AndroidManifest.xml:9:5-20
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:23:5-38:19
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:23:5-38:19
+MERGED from [org.xutils:xutils:3.5.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\xutils-3.5.1.aar\6e26c517a5f70f04e47a114f294502e2\AndroidManifest.xml:12:5-20
+MERGED from [org.xutils:xutils:3.5.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\xutils-3.5.1.aar\6e26c517a5f70f04e47a114f294502e2\AndroidManifest.xml:12:5-20
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\829e74336c41ad4e44c64a8eaefc52a7\AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\829e74336c41ad4e44c64a8eaefc52a7\AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.8.0.aar\8c87a8f391e78e9198d9a1f3e4f12df2\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.8.0.aar\8c87a8f391e78e9198d9a1f3e4f12df2\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from [com.trycatch.android:mysnackbar:1.2.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\mysnackbar-1.2.2.aar\d3508b3b2c3b70c788e95697cbedf7c4\AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:69:9-41
+	android:icon
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:68:9-45
+	android:allowBackup
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:67:9-35
+	android:theme
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:70:9-40
+	android:usesCleartextTraffic
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:71:3-38
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:66:3-46
+activity#com.wanding.xingpos.activity.WelcomeActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:73:9-81:20
+	android:label
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:75:13-45
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:74:13-72
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:76:13-80:29
+action#android.intent.action.MAIN
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:77:17-69
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:77:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:79:17-77
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:79:27-74
+meta-data#PUSH_APPID
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:83:9-85:54
+	android:value
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:85:13-51
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:84:13-38
+meta-data#PUSH_APPKEY
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:86:9-88:53
+	android:value
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:88:13-50
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:87:13-39
+meta-data#PUSH_APPSECRET
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:89:9-91:54
+	android:value
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:91:13-51
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:90:13-42
+service#com.igexin.sdk.PushService
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:95:9-104:19
+	android:process
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:100:13-43
+	android:label
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:99:13-47
+	android:exported
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:98:13-37
+	android:permission
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:97:13-69
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:96:13-54
+intent-filter#action:name:com.igexin.sdk.action.service.message
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:101:13-103:29
+action#com.igexin.sdk.action.service.message
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:102:17-79
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:102:25-77
+receiver#com.igexin.sdk.PushReceiver
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:106:9-116:20
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:106:19-61
+intent-filter#action:name:android.intent.action.ACTION_POWER_CONNECTED+action:name:android.intent.action.ACTION_POWER_DISCONNECTED+action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.MEDIA_MOUNTED+action:name:android.intent.action.USER_PRESENT+action:name:android.net.conn.CONNECTIVITY_CHANGE
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:107:13-115:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:108:17-79
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:108:25-76
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:109:17-79
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:109:25-76
+action#android.intent.action.USER_PRESENT
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:110:17-77
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:110:25-74
+action#android.intent.action.MEDIA_MOUNTED
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:112:17-78
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:112:25-75
+action#android.intent.action.ACTION_POWER_CONNECTED
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:113:17-87
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:113:25-84
+action#android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:114:17-90
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:114:25-87
+service#com.wanding.xingpos.getui.DemoIntentService
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:119:9-122:19
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:120:13-52
+service#com.wanding.xingpos.getui.GetuiPushService
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:123:3-128:13
+	android:process
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:127:4-34
+	android:label
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:126:4-31
+	android:exported
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:125:4-27
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:124:4-42
+activity#com.zijunlin.Zxing.Demo.CaptureActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:131:3-135:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:133:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:134:7-37
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:132:7-61
+activity#com.wanding.xingpos.MainActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:137:3-141:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:139:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:140:7-38
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:138:7-54
+activity#com.wanding.xingpos.activity.UserSetPasswdActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:143:3-147:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:145:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:146:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:144:7-72
+activity#com.wanding.xingpos.activity.CardPayActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:149:3-153:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:151:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:152:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:150:7-66
+activity#com.wanding.xingpos.activity.CardRefundActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:155:3-159:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:157:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:158:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:156:7-69
+activity#com.wanding.xingpos.activity.AuthActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:161:3-165:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:163:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:164:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:162:7-63
+activity#com.wanding.xingpos.instalment.InstalmentActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:167:3-171:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:169:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:170:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:168:7-71
+activity#com.wanding.xingpos.instalment.InstalmentOrderDetailActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:173:3-177:16
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:175:4-40
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:176:4-33
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:174:4-79
+activity#com.wanding.xingpos.instalment.InstalmentOrderRefundActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:179:3-183:16
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:181:4-40
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:182:4-33
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:180:4-79
+activity#com.wanding.xingpos.instalment.InstalmentRefundHintActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:185:3-189:16
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:187:4-40
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:188:4-33
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:186:4-78
+activity#com.wanding.xingpos.instalment.InstalmentScreenActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:191:3-195:16
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:193:4-40
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:194:4-33
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:192:4-74
+activity#com.wanding.xingpos.activity.ScanPayActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:197:3-201:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:199:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:200:7-37
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:198:7-66
+activity#com.wanding.xingpos.activity.PaySuccessActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:203:3-207:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:205:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:206:7-37
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:204:7-69
+activity#com.wanding.xingpos.activity.ScanRefundActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:209:3-213:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:211:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:212:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:210:7-69
+activity#com.wanding.xingpos.activity.RefundSuccessActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:215:3-219:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:217:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:218:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:216:7-72
+activity#com.wanding.xingpos.activity.ScanQueryActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:221:3-225:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:223:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:224:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:222:7-68
+activity#com.wanding.xingpos.activity.WriteOffActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:227:3-231:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:229:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:230:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:228:7-67
+activity#com.wanding.xingpos.activity.WriteOffRecodeListActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:233:3-237:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:235:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:236:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:234:7-77
+activity#com.wanding.xingpos.activity.CardVerificaRecodeActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:238:3-242:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:240:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:241:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:239:7-77
+activity#com.wanding.xingpos.activity.WriteOffRecodeDetailActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:244:3-248:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:246:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:247:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:245:7-79
+activity#com.wanding.xingpos.activity.NumCardRecodeDetailActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:250:3-254:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:252:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:253:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:251:7-78
+activity#com.wanding.xingpos.activity.CouponsRecodeDetailActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:256:3-260:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:258:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:259:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:257:7-78
+activity#com.wanding.xingpos.activity.ScanAuthActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:262:3-266:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:264:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:265:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:263:7-67
+activity#com.wanding.xingpos.activity.ScanAuthCancelActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:268:3-272:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:270:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:271:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:269:7-73
+activity#com.wanding.xingpos.activity.ScanAuthRecodeListActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:274:3-278:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:276:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:277:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:275:7-77
+activity#com.wanding.xingpos.activity.ScanAuthOrderDetailsActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:280:3-284:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:282:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:283:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:281:7-79
+activity#com.wanding.xingpos.activity.MemberManageActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:287:3-291:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:289:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:290:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:288:7-71
+activity#com.wanding.xingpos.activity.MemberQueryActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:293:3-297:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:295:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:296:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:294:7-70
+activity#com.wanding.xingpos.activity.MemberTopUpCardCodeActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:299:3-303:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:301:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:302:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:300:7-78
+activity#com.wanding.xingpos.activity.MemberTopUpRecodeListActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:305:3-309:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:307:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:308:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:306:7-80
+activity#com.wanding.xingpos.activity.DepositRecodeDetailActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:311:3-315:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:313:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:314:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:312:7-78
+activity#com.wanding.xingpos.activity.MemberTopUpActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:317:3-321:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:319:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:320:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:318:7-70
+activity#com.wanding.xingpos.activity.MemberPayActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:323:3-327:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:325:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:326:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:324:7-68
+activity#com.wanding.xingpos.activity.MemberPayRecodeListActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:329:3-333:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:331:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:332:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:330:7-78
+activity#com.wanding.xingpos.activity.MemberPayRecodeDetailActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:335:3-339:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:337:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:338:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:336:7-80
+activity#com.wanding.xingpos.activity.BuyCardActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:341:3-345:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:343:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:344:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:342:7-66
+activity#com.wanding.xingpos.activity.BuyCardTypeActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:347:3-351:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:349:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:350:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:348:7-70
+activity#com.wanding.xingpos.activity.BuyCardRecodeListActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:353:3-357:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:355:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:356:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:354:7-76
+activity#com.wanding.xingpos.activity.BuyCardRecodeDetailActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:359:3-363:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:361:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:362:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:360:7-78
+activity#com.wanding.xingpos.activity.PayErrorActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:365:3-369:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:367:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:368:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:366:7-67
+activity#com.wanding.xingpos.activity.AgainPrintActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:371:3-375:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:373:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:374:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:372:7-69
+activity#com.wanding.xingpos.activity.ShiftActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:377:3-381:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:379:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:380:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:378:7-64
+activity#com.wanding.xingpos.activity.ShiftRecordActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:383:3-387:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:385:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:386:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:384:7-70
+activity#com.wanding.xingpos.activity.ShiftRecordDetailActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:389:3-393:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:391:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:392:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:390:7-76
+activity#com.wanding.xingpos.activity.OrderListActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:395:3-399:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:397:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:398:7-37
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:396:7-68
+activity#com.wanding.xingpos.activity.CopyOfOrderListActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:401:3-405:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:403:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:404:7-37
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:402:7-74
+activity#com.wanding.xingpos.activity.OrderDetailsActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:407:3-411:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:409:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:410:7-37
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:408:7-71
+activity#com.wanding.xingpos.activity.SummaryActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:413:3-417:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:415:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:416:7-37
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:414:7-66
+activity#com.wanding.xingpos.activity.QueryOrderDetailsActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:419:3-423:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:421:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:422:7-37
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:420:7-76
+activity#com.wanding.xingpos.activity.StaffListActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:425:3-429:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:427:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:428:7-37
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:426:7-68
+activity#com.wanding.xingpos.activity.AddStaffActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:431:3-435:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:433:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:434:7-37
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:432:7-67
+activity#com.wanding.xingpos.activity.BatchSecurActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:437:3-441:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:439:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:440:7-37
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:438:7-69
+activity#com.wanding.xingpos.activity.CouponTypeListActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:443:3-447:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:445:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:446:7-37
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:444:7-73
+activity#com.wanding.xingpos.activity.SettingActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:449:3-453:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:451:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:452:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:450:7-66
+activity#com.wanding.xingpos.activity.SetPayServiceActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:455:3-459:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:457:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:458:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:456:7-72
+activity#com.wanding.xingpos.activity.SetPrintNumActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:461:3-465:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:463:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:464:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:462:7-70
+activity#com.wanding.xingpos.activity.SetMoneyActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:467:3-471:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:469:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:470:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:468:7-67
+activity#com.wanding.xingpos.activity.BusinessDetailsActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:473:3-477:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:475:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:476:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:474:7-74
+activity#com.wanding.xingpos.activity.SetAboutAppActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:479:3-483:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:481:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:482:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:480:7-70
+activity#com.wanding.xingpos.activity.TestLayout
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:484:3-488:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:486:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:487:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:485:7-61
+activity#com.wanding.xingpos.activity.PrintTextActivity
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:489:3-493:16
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:491:4-40
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:492:4-33
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:490:4-65
+activity#com.wanding.xingpos.activity.TestWebView
+ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:494:3-498:19
+	android:screenOrientation
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:496:7-43
+	android:launchMode
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:497:7-36
+	android:name
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml:495:7-62
+uses-sdk
+INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+MERGED from [com.trycatch.android:mysnackbar:1.2.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\mysnackbar-1.2.2.aar\d3508b3b2c3b70c788e95697cbedf7c4\AndroidManifest.xml:7:5-9:41
+MERGED from [com.trycatch.android:mysnackbar:1.2.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\mysnackbar-1.2.2.aar\d3508b3b2c3b70c788e95697cbedf7c4\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\9c55e9506d3d2255a789bb85b06527a1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\9c55e9506d3d2255a789bb85b06527a1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\3917f9f5a8ce4e67b95677e4ebba3e70\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\3917f9f5a8ce4e67b95677e4ebba3e70\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\f39b1b95807035542114d88395208963\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\f39b1b95807035542114d88395208963\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\b3768464b2ff76d1934b0fc1e2da0ba3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\b3768464b2ff76d1934b0fc1e2da0ba3\AndroidManifest.xml:5:5-7:41
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:8:5-10:41
+MERGED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:8:5-10:41
+MERGED from [org.xutils:xutils:3.5.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\xutils-3.5.1.aar\6e26c517a5f70f04e47a114f294502e2\AndroidManifest.xml:8:5-10:41
+MERGED from [org.xutils:xutils:3.5.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\xutils-3.5.1.aar\6e26c517a5f70f04e47a114f294502e2\AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\829e74336c41ad4e44c64a8eaefc52a7\AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\829e74336c41ad4e44c64a8eaefc52a7\AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\f03e76f7153e78babc0627466934a8f0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\f03e76f7153e78babc0627466934a8f0\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.8.0.aar\8c87a8f391e78e9198d9a1f3e4f12df2\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.8.0.aar\8c87a8f391e78e9198d9a1f3e4f12df2\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\8e9afa9c534e3a7e9174bf759392eb2b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\8e9afa9c534e3a7e9174bf759392eb2b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\76de3b53c0b8e5b1250a6f94f7919bb7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\76de3b53c0b8e5b1250a6f94f7919bb7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\415ca401f99ccf167880821cb77a6cb0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\415ca401f99ccf167880821cb77a6cb0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\e4377b9f3073cf64fcc2ef598478acc6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\e4377b9f3073cf64fcc2ef598478acc6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\5aa6ecda1206945052b545b70de748fa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\5aa6ecda1206945052b545b70de748fa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\2c979196bdacbb0535c0d21b220619ab\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\2c979196bdacbb0535c0d21b220619ab\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\c1ae1365adc5b5707faf7605629e8599\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\c1ae1365adc5b5707faf7605629e8599\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\b42aaa168902c1a272e238346960ec69\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\b42aaa168902c1a272e238346960ec69\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\3e7c290c4a19bfff4e903baa1ef2ffc1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\3e7c290c4a19bfff4e903baa1ef2ffc1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\315d05ba9a449f24c9ab78502ecfbebc\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\315d05ba9a449f24c9ab78502ecfbebc\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\9b48fd013c033b93f0a3bfd63a203639\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\9b48fd013c033b93f0a3bfd63a203639\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\1a6ce17049ff2073744154273bfdf814\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\1a6ce17049ff2073744154273bfdf814\AndroidManifest.xml:20:5-44
+INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+		INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+		ADDED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+		INJECTED from E:\SVNCode\projectCode\XingPOSToPay1\XingPOSToPay\src\main\AndroidManifest.xml
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:13:5-68
+	android:name
+		ADDED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:13:22-65
+activity#com.newland.starpos.installmentsdk.MainActivity
+ADDED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:26:9-37:20
+	android:theme
+		ADDED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:28:13-47
+	android:name
+		ADDED from [:installmentsdk-android-1.0.0:] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\installmentsdk-android-1.0.0.aar\6219df30a673153094c860b37ddcf95e\AndroidManifest.xml:27:13-75

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+	<include
+	    android:id="@+id/shift_record_detail_titleLayout"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    layout="@layout/title_activity"
+       	/>
+	<View 
+	    android:id="@+id/shift_record_detail_titlefgxView"
+	    style="@style/divider_line1dp"
+	    android:layout_below="@id/shift_record_detail_titleLayout"
+	    />
+	<include 
+	    layout="@layout/shift_content"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/shift_record_detail_titlefgxView"
+	    />
+	
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="45dp"
+	    android:orientation="horizontal"
+	    android:layout_alignParentBottom="true"
+	    >
+	    <TextView 
+	    	android:id="@+id/shift_record_detail_tvPrint"
+	        android:layout_width="0dp"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1"
+	        android:text="打印"
+	        android:textSize="@dimen/text_size14"
+	        android:textColor="@color/black_000000"
+	        android:gravity="center"
+	        android:background="@color/green_65db4e"
+	        />
+	</LinearLayout>
+	
+</RelativeLayout>

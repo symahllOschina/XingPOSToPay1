@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_f3f7fd"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp">
+
+        <EditText
+            android:id="@+id/instalment_query_etOrderId"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_white_frame1dp_radius20"
+            android:hint="请输入订单号"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp"
+            android:text=""
+            android:textSize="@dimen/text_size14"
+            android:textColor="@color/black_333"
+            />
+        <TextView
+            android:id="@+id/instalment_query_tvScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@color/green_30d60a"
+            android:gravity="center"
+            android:text="筛选"
+            android:textColor="@color/white_ffffff"
+            android:textSize="@dimen/text_size18"
+            android:layout_marginLeft="15dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            />
+    </LinearLayout>
+
+    <com.pull.refresh.view.XListView
+        android:id="@+id/instalment_query_xListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        ></com.pull.refresh.view.XListView>
+
+    <TextView
+        android:id="@+id/instalment_query_tvQuery"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/green_30d60a"
+        android:gravity="center"
+        android:text="查询"
+        android:textColor="@color/white_ffffff"
+        android:textSize="@dimen/text_size18" />
+</LinearLayout>

@@ -1,0 +1,963 @@
+package com.wanding.xingpos.activity;
+
+import android.app.Activity;
+import android.app.Dialog;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.ServiceConnection;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.Message;
+import android.os.RemoteException;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.fuyousf.android.fuious.service.PrintInterface;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.nld.cloudpos.aidl.AidlDeviceService;
+import com.nld.cloudpos.aidl.printer.AidlPrinter;
+import com.nld.cloudpos.aidl.scan.AidlScanner;
+import com.nld.cloudpos.aidl.scan.AidlScannerListener;
+import com.nld.cloudpos.data.ScanConstant;
+import com.symapp.dialog.util.CustomDialog;
+import com.wanding.xingpos.Constants;
+import com.wanding.xingpos.MainActivity;
+import com.wanding.xingpos.R;
+import com.wanding.xingpos.base.BaseActivity;
+import com.wanding.xingpos.bean.MemberCardDetail;
+import com.wanding.xingpos.bean.MemberCardListResData;
+import com.wanding.xingpos.bean.PosScanpayResData;
+import com.wanding.xingpos.bean.UserLoginResData;
+import com.wanding.xingpos.bean.WriteOffResData;
+import com.wanding.xingpos.httputils.HttpJsonReqUtil;
+import com.wanding.xingpos.httputils.NetworkUtils;
+import com.wanding.xingpos.printutil.FuyouPrintUtil;
+import com.wanding.xingpos.printutil.NewlandPrintUtil;
+import com.wanding.xingpos.util.GsonUtils;
+import com.wanding.xingpos.util.MySerialize;
+import com.wanding.xingpos.util.NitConfig;
+import com.wanding.xingpos.util.SharedPreferencesUtil;
+import com.wanding.xingpos.util.ToastUtil;
+import com.wanding.xingpos.util.Utils;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+/** 核销劵界面 */
+public class WriteOffActivity extends BaseActivity implements OnClickListener{
+	
+	private ImageView imgBack;
+	private TextView tvTitle;
+	private TextView tvOption;
+	private EditText etOrderId;
+	private ImageView imagScan;
+	private TextView tvOk;
+	
+	private Dialog hintDialog;// 加载数据时对话框
+	private String scanCodeStr;//扫描返回结果
+	private String etCodeTextStr;//输入框内容
+	
+	private Context context = WriteOffActivity.this;
+	private UserLoginResData posPublicData;
+
+
+	/**
+	 * posProvider：MainActivity里定义为公共参数，区分pos提供厂商
+	 * 值为 newland 表示新大陆
+	 * 值为 fuyousf 表示富友
+	 */
+	private String posProvider;
+
+	AidlDeviceService aidlDeviceService = null;
+	AidlPrinter aidlPrinter = null;
+    public AidlScanner aidlScanner=null;
+    /**  cameraType为true表示打开后置摄像头，fasle为前置摄像头 */
+	private boolean cameType = true;
+
+	/**
+	 * 新大陆(打印机，扫码摄像头)AIDL服务
+	 */
+    private ServiceConnection serviceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            Log.e(TAG, "bind device service");
+            aidlDeviceService = AidlDeviceService.Stub.asInterface(service);
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            Log.e(TAG, "unbind device service");
+            aidlDeviceService = null;
+        }
+    };
+
+	/**
+	 * 富友(打印机)AIDL服务
+	 */
+	private PrintInterface printService = null;
+	private PrintReceiver printReceiver;
+	private ServiceConnection printServiceConnection = new ServiceConnection() {
+
+		@Override
+		public void onServiceConnected(ComponentName arg0, IBinder arg1) {
+			printService = PrintInterface.Stub.asInterface(arg1);
+		}
+
+		@Override
+		public void onServiceDisconnected(ComponentName arg0) {
+
+		}
+
+	};
+
+	class PrintReceiver extends BroadcastReceiver {
+
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			String result = intent.getStringExtra("result");
+//			etBack.setText("reason："+result);
+		}
+	}
+
+	/**
+	 * 区分界面入口标志
+	 */
+	private String sign = "";
+
+
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.write_off_activity);
+		posProvider = MainActivity.posProvider;
+		Intent intent = getIntent();
+		sign = intent.getStringExtra("sign");
+		try{
+			if(posProvider.equals(Constants.NEW_LAND)){
+				//绑定打印机服务
+				bindServiceConnection();
+			}else if(posProvider.equals(Constants.FUYOU_SF)){
+				initPrintService();
+			}
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+
+		initView();
+		initData();
+	}
+
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		if(posProvider.equals(Constants.NEW_LAND)){
+			unbindService(serviceConnection);
+			aidlPrinter=null;
+			aidlScanner = null;
+		}else if(posProvider.equals(Constants.FUYOU_SF)){
+			if(null != printReceiver){
+				unregisterReceiver(printReceiver);
+			}
+			unbindService(printServiceConnection);
+		}
+		Log.e(TAG, "释放资源成功");
+	}
+	/**
+     * 绑定服务
+     */
+    public void bindServiceConnection() {
+        bindService(new Intent("nld_cloudpos_device_service"), serviceConnection,
+                Context.BIND_AUTO_CREATE);
+//        showMsgOnTextView("服务绑定");
+        Log.e("绑定服务", "绑定服务1");
+    }
+
+	private void initPrintService(){
+		printRegisterReceiver();
+		Intent printIntent = new Intent(/*"com.fuyousf.android.fuious.service.PrintInterface"*/);
+		printIntent.setAction("com.fuyousf.android.fuious.service.PrintInterface");
+		printIntent.setPackage("com.fuyousf.android.fuious");
+		bindService(printIntent, printServiceConnection, Context.BIND_AUTO_CREATE);
+	}
+
+	private void printRegisterReceiver(){
+		IntentFilter intentFilter = new IntentFilter();
+		intentFilter.addAction("com.fuyousf.android.fuious.service.print");
+		printReceiver = new PrintReceiver();
+		registerReceiver(printReceiver, intentFilter);
+	}
+
+	/**
+	 * 初始化打印设备
+	 */
+	public void getPrinter() {
+		Log.i(TAG, "获取打印机设备实例...");
+		try {
+			aidlPrinter = AidlPrinter.Stub.asInterface(aidlDeviceService.getPrinter());
+//            showMsgOnTextView("初始化打印机实例");
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+
+	}
+    
+    /**
+     * 初始化扫码设备
+     */
+    public void initScanner() {
+        try {
+            if (aidlScanner == null){
+				aidlScanner = AidlScanner.Stub.asInterface(aidlDeviceService.getScanner());
+			}
+//            showMsgOnTextView("初始化打扫码实例");
+        } catch (RemoteException e) {
+            e.printStackTrace();
+
+        }
+    }
+
+	/**
+	 * 前置扫码
+	 */
+	public void frontscan(){
+		try {
+			Log.i(TAG, "-------------scan-----------");
+			aidlScanner= AidlScanner
+					.Stub.asInterface(aidlDeviceService.getScanner());
+			int time=10;//超时时间
+			aidlScanner.startScan(ScanConstant.ScanType.FRONT, time, new AidlScannerListener.Stub() {
+
+				@Override
+				public void onScanResult(String[] arg0) throws RemoteException {
+//                    showMsgOnTextView("onScanResult-----"+arg0[0]);
+					Log.w(TAG,"onScanResult-----"+arg0[0]);
+					scanCodeStr = arg0[0];
+					//如果扫描的二维码为空则不执行支付请求
+					if(scanCodeStr!=null&&!"".equals(scanCodeStr)){
+						String auth_no = scanCodeStr;
+						Log.e("前置扫码值：", auth_no);
+						int msg = NetworkUtils.MSG_WHAT_ONEHUNDRED;
+						String text = auth_no;
+						sendMessage(msg,text);
+
+					}else{
+
+						ToastUtil.showText(activity,"扫码取消或失败！",1);
+					}
+
+				}
+
+				@Override
+				public void onFinish() throws RemoteException {
+//					ToastUtil.showText(activity,"扫码失败！",1);
+
+				}
+
+				@Override
+				public void onError(int arg0, String arg1) throws RemoteException {
+//					ToastUtil.showText(activity,"扫码失败！",1);
+
+				}
+			});
+		} catch (Exception e) {
+			e.printStackTrace();
+//			ToastUtil.showText(activity,"扫码失败！",1);
+		}
+	}
+
+	/**
+	 * 后置扫码
+	 */
+	public void backscan(){
+		try {
+			Log.i(TAG, "-------------scan-----------");
+			aidlScanner= AidlScanner
+					.Stub.asInterface(aidlDeviceService.getScanner());
+			aidlScanner.startScan(ScanConstant.ScanType.BACK, 10, new AidlScannerListener.Stub() {
+
+				@Override
+				public void onScanResult(String[] arg0) throws RemoteException {
+//					showMsgOnTextView("onScanResult-----"+arg0[0]);
+					Log.w(TAG,"onScanResult-----"+arg0[0]);
+
+					scanCodeStr = arg0[0];
+					if(scanCodeStr!=null&&!"".equals(scanCodeStr)){
+						//auth_no	授权码（及扫描二维码值）
+						String auth_no = scanCodeStr;
+						Log.e("后置扫码值：", auth_no);
+
+						int msg = NetworkUtils.MSG_WHAT_ONEHUNDRED;
+						String text = auth_no;
+						sendMessage(msg,text);
+
+					}else{
+
+						Log.e("后置扫码值：", "为空");
+						ToastUtil.showText(activity,"扫码取消或失败！",1);
+					}
+
+				}
+
+				@Override
+				public void onFinish() throws RemoteException {
+//					ToastUtil.showText(activity,"扫码失败！",1);
+
+				}
+
+				@Override
+				public void onError(int arg0, String arg1) throws RemoteException {
+//					ToastUtil.showText(activity,"扫码失败！",1);
+
+				}
+			});
+		} catch (Exception e) {
+			e.printStackTrace();
+//			ToastUtil.showText(activity,"扫码失败！",1);
+		}
+	}
+
+	private void initData(){
+		//取出保存的摄像头参数值
+		SharedPreferencesUtil sharedPreferencesUtil3 = new SharedPreferencesUtil(context, "scancamera");
+		cameType = (Boolean) sharedPreferencesUtil3.getSharedPreference("cameTypeKey", cameType);
+		if(cameType){
+			Log.e("当前摄像头打开的是：", "后置");
+		}else{
+			Log.e("当前摄像头打开的是：", "前置");
+		}
+		//加载数据
+		try {
+			posPublicData=(UserLoginResData) MySerialize.deSerialization(MySerialize.getObject("UserLoginResData", getContext()));
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	/** 
+	 * 初始化界面控件
+	 */
+	private void initView(){
+		imgBack = (ImageView) findViewById(R.id.title_imageBack);
+		tvTitle = (TextView) findViewById(R.id.title_tvTitle);
+		tvOption = (TextView) findViewById(R.id.title_tvFunction);
+		etOrderId = (EditText) findViewById(R.id.write_off_etOrderId);
+		imagScan = (ImageView) findViewById(R.id.write_off_imagScan);
+		tvOk = (TextView) findViewById(R.id.write_off_tvOk);
+		
+		tvTitle.setText("核劵");
+		tvOption.setVisibility(View.VISIBLE);
+		tvOption.setText("核销记录");
+
+
+
+
+		imgBack.setOnClickListener(this);
+		tvOption.setOnClickListener(this);
+		imagScan.setOnClickListener(this);
+		tvOk.setOnClickListener(this);
+	}
+	
+	/** 获取自己生成的订单号   */
+	private void getWriteOffQueryCode(){
+
+		etCodeTextStr = etOrderId.getText().toString().trim();
+		if(Utils.isEmpty(etCodeTextStr)){
+			Toast.makeText(context, "核销劵码不能为空！", Toast.LENGTH_LONG).show();
+			return;
+		}
+		hintDialog=CustomDialog.CreateDialog(getContext(), "    核劵中...");
+		hintDialog.show();
+		hintDialog.setCanceledOnTouchOutside(false);
+
+		new Thread(){
+			@Override
+			public void run() {
+				try {
+					JSONObject userJSON = new JSONObject();
+					userJSON.put("code",etCodeTextStr);
+					String url = "";
+					if(sign.equals("1")){
+						userJSON.put("mid",posPublicData.getMid());
+						url = NitConfig.writeOffQueryCodeUrl;
+					}else if(sign.equals("2")){
+						url = NitConfig.queryCodeUrl;
+						userJSON.put("terminal_id",posPublicData.getTerminal_id());
+					}
+
+
+					Log.e(TAG,"查询订单号路径："+url);
+
+					String content = String.valueOf(userJSON);
+					Log.e("发起请求参数：", content);
+                    HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();  
+                    //HttpURLConnection connection = (HttpURLConnection) nURL.openConnection();  
+                   connection.setConnectTimeout(60000);
+                   connection.setReadTimeout(60000);
+                   connection.setRequestMethod("POST");  
+                   connection.setDoOutput(true);  
+                   connection.setRequestProperty("User-Agent", "Fiddler");  
+                   connection.setRequestProperty("Content-Type", "application/json");  
+                   connection.setRequestProperty("Charset", "UTF-8");  
+                   OutputStream os = connection.getOutputStream();  
+                   os.write(content.getBytes());  
+                   os.close();  
+                   int  code = connection.getResponseCode();
+                   Log.e("返回状态吗：", code+"");
+                   if(code == 200){
+                	   
+                	   InputStream is = connection.getInputStream();  
+                	   //下面的json就已经是{"Person":{"username":"zhangsan","age":"12"}}//这个形式了,只不过是String类型  
+                	   String jsonStr = HttpJsonReqUtil.readString(is); 
+                	   Log.e("返回JSON值：", jsonStr);
+                	   Message msg=new Message();
+					   if(sign.equals("1")){
+						   msg.what=1;
+					   }else if(sign.equals("2")){
+						   msg.what=11;
+					   }
+
+   					   msg.obj=jsonStr;
+   				       mHandler.sendMessage(msg);
+                   }else{
+                	   Message msg=new Message();
+   				       msg.what=404;
+   				       mHandler.sendMessage(msg);
+                   }
+                   
+					
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					Message msg=new Message();
+				    msg.what=404;
+				    mHandler.sendMessage(msg);
+					
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					Message msg=new Message();
+				    msg.what=404;
+				    mHandler.sendMessage(msg);
+				}   catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					Message msg=new Message();
+				    msg.what=404;
+				    mHandler.sendMessage(msg);
+				}  
+				
+			};
+		}.start();
+	}
+	
+	/** 核劵请求  */
+	private void writeOffConsumeCode(final int id){
+		new Thread(){
+			@Override
+			public void run() {
+				try {
+
+					JSONObject userJSON = new JSONObject();
+					userJSON.put("code",etCodeTextStr);
+					userJSON.put("couponId",String.valueOf(id));
+					userJSON.put("mid",posPublicData.getMid());
+					String url = NitConfig.writeOffConsumeCodeUrl;
+
+
+					Log.e(TAG,"核销卡劵路径："+url);
+					String content = String.valueOf(userJSON);
+					Log.e("发起请求参数：", content);
+                    HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();  
+                    //HttpURLConnection connection = (HttpURLConnection) nURL.openConnection();  
+                   connection.setConnectTimeout(60000);
+                   connection.setReadTimeout(60000);
+                   connection.setRequestMethod("POST");  
+                   connection.setDoOutput(true);  
+                   connection.setRequestProperty("User-Agent", "Fiddler");  
+                   connection.setRequestProperty("Content-Type", "application/json");  
+                   connection.setRequestProperty("Charset", "UTF-8");  
+                   OutputStream os = connection.getOutputStream();  
+                   os.write(content.getBytes());  
+                   os.close();  
+                   int  code = connection.getResponseCode();
+                   Log.e("返回状态吗：", code+"");
+                   if(code == 200){
+                	   
+                	   InputStream is = connection.getInputStream();  
+                	   //下面的json就已经是{"Person":{"username":"zhangsan","age":"12"}}//这个形式了,只不过是String类型  
+                	   String jsonStr = HttpJsonReqUtil.readString(is); 
+                	   Log.e("返回JSON值：", jsonStr);
+                	   Message msg=new Message();
+                	   msg.what=2;
+   					   msg.obj=jsonStr;
+   				       mHandler.sendMessage(msg);
+                	   
+                	    
+                   }else{
+                	   Message msg=new Message();
+   				       msg.what=404;
+   				       mHandler.sendMessage(msg);
+                   }
+                   
+					
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					Message msg=new Message();
+				    msg.what=404;
+				    mHandler.sendMessage(msg);
+					
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					Message msg=new Message();
+				    msg.what=404;
+				    mHandler.sendMessage(msg);
+				}  
+				
+			};
+		}.start();
+	}
+
+	/** 核劵请求  */
+	private void consumeCode(final String id){
+		new Thread(){
+			@Override
+			public void run() {
+				try {
+
+					JSONObject userJSON = new JSONObject();
+					userJSON.put("code",etCodeTextStr);
+					userJSON.put("couponId",String.valueOf(id));
+					userJSON.put("terminal_id",posPublicData.getTerminal_id());
+					String url = NitConfig.consumeCodeUrl;
+
+
+					Log.e(TAG,"核销卡劵路径："+url);
+					String content = String.valueOf(userJSON);
+					Log.e("发起请求参数：", content);
+					HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+					//HttpURLConnection connection = (HttpURLConnection) nURL.openConnection();
+					connection.setConnectTimeout(60000);
+					connection.setReadTimeout(60000);
+					connection.setRequestMethod("POST");
+					connection.setDoOutput(true);
+					connection.setRequestProperty("User-Agent", "Fiddler");
+					connection.setRequestProperty("Content-Type", "application/json");
+					connection.setRequestProperty("Charset", "UTF-8");
+					OutputStream os = connection.getOutputStream();
+					os.write(content.getBytes());
+					os.close();
+					int  code = connection.getResponseCode();
+					Log.e("返回状态吗：", code+"");
+					if(code == 200){
+
+						InputStream is = connection.getInputStream();
+						//下面的json就已经是{"Person":{"username":"zhangsan","age":"12"}}//这个形式了,只不过是String类型
+						String jsonStr = HttpJsonReqUtil.readString(is);
+						Log.e("返回JSON值：", jsonStr);
+						Message msg=new Message();
+						msg.what=22;
+						msg.obj=jsonStr;
+						mHandler.sendMessage(msg);
+
+
+					}else{
+						Message msg=new Message();
+						msg.what=404;
+						mHandler.sendMessage(msg);
+					}
+
+
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					Message msg=new Message();
+					msg.what=404;
+					mHandler.sendMessage(msg);
+
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					Message msg=new Message();
+					msg.what=404;
+					mHandler.sendMessage(msg);
+				}
+
+			};
+		}.start();
+	}
+
+	private void sendMessage(int what,String text){
+		Message msg = new Message();
+		msg.what = what;
+		msg.obj = text;
+		mHandler.sendMessage(msg);
+	}
+
+	
+	private Handler mHandler = new Handler(){
+		@Override
+		public void handleMessage(Message msg) {
+			switch (msg.what) {
+			case 100:
+				String auth_no = (String) msg.obj;
+				etOrderId.setText(auth_no);
+				break;
+			case 1:
+				String writeOffStateJsonStr=(String) msg.obj;
+				writeOffStateJsonStr(writeOffStateJsonStr);
+				break;
+			case 11:
+				String queryCodeJsonStr=(String) msg.obj;
+				queryCodeJsonStr(queryCodeJsonStr);
+				break;
+			case 2:
+				String writeOffResStr=(String) msg.obj;
+                writeOffResStr(writeOffResStr);
+				etOrderId.setText("");
+				if(hintDialog!=null&&hintDialog.isShowing()){
+					hintDialog.dismiss();
+				}
+				break;
+			case 22:
+				String consumeCodeJsonStr=(String) msg.obj;
+				consumeCodeJsonStr(consumeCodeJsonStr);
+				etOrderId.setText("");
+				if(hintDialog!=null&&hintDialog.isShowing()){
+					hintDialog.dismiss();
+				}
+				break;
+			case 201:
+				Toast.makeText(getContext(), "网络连接断开，数据获取失败！", Toast.LENGTH_LONG).show();
+				break;
+			case 202:
+				Toast.makeText(getContext(), "请检查网络是否连接！", Toast.LENGTH_LONG).show();
+				break;
+			case 404:
+				Toast.makeText(getContext(), "服务器异常...", Toast.LENGTH_LONG).show();
+				if(hintDialog!=null&&hintDialog.isShowing()){
+					hintDialog.dismiss();
+				}
+        		etOrderId.setText("");
+				break;
+			}
+		};
+	};
+
+	/**
+	 * 检验核销劵码有效性
+	 */
+	private void writeOffStateJsonStr(String jsonStr){
+		//{"data":{},"message":"该码不可用","status":300}
+		//{"data":{"resultMap":{"code":"548986373384","description":null,"startTime":"1554825600","endTime":"1554998399","id":0,"title":"pos核销劵","logoUrl":null,"status":"1","statusCode":200,"errorMsg":"查询成功"}},"message":"查询成功","status":200}
+		try {
+			JSONObject job = new JSONObject(jsonStr);
+			String status = job.getString("status");
+			String message = job.getString("message");
+			if("200".equals(status)){
+				String dataJson = job.getString("data");
+				JSONObject dataJob = new JSONObject(dataJson);
+				String resultMapJson = dataJob.getString("resultMap");
+				JSONObject resultMapJob = new JSONObject(resultMapJson);
+				int id = resultMapJob.getInt("id");
+				//核劵
+				writeOffConsumeCode(id);
+			}else{
+				if(hintDialog!=null&&hintDialog.isShowing()){
+					hintDialog.dismiss();
+				}
+				if(Utils.isNotEmpty(message)){
+					Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+				}else{
+					Toast.makeText(context, "该劵不可用！", Toast.LENGTH_LONG).show();
+				}
+			}
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * 检验核销劵码有效性
+	 */
+	private void queryCodeJsonStr(String jsonStr){
+		try {
+			JSONObject job = new JSONObject(jsonStr);
+			String code = job.getString("code");
+			String msg = job.getString("msg");
+			if("000000".equals(code)){
+				String subCode = job.getString("subCode");
+				String subMsg = job.getString("subMsg");
+				if("000000".equals(subCode)){
+					String dataJson = job.getString("data");
+					JSONObject dataJob = new JSONObject(dataJson);
+
+					String id = dataJob.getString("id");
+					//核劵
+					consumeCode(id);
+				}else{
+					if(Utils.isNotEmpty(subMsg)){
+						Toast.makeText(activity, subMsg, Toast.LENGTH_LONG).show();
+					}else{
+						Toast.makeText(activity, "查询失败！", Toast.LENGTH_LONG).show();
+					}
+					if(hintDialog!=null&&hintDialog.isShowing()){
+						hintDialog.dismiss();
+					}
+				}
+
+			}else{
+				if(Utils.isNotEmpty(msg)){
+					Toast.makeText(activity, msg, Toast.LENGTH_LONG).show();
+				}else{
+					Toast.makeText(activity, "查询失败！", Toast.LENGTH_LONG).show();
+				}
+				if(hintDialog!=null&&hintDialog.isShowing()){
+					hintDialog.dismiss();
+				}
+			}
+		} catch (JSONException e) {
+			e.printStackTrace();
+			if(hintDialog!=null&&hintDialog.isShowing()){
+				hintDialog.dismiss();
+			}
+		}catch (Exception e){
+			e.printStackTrace();
+			if(hintDialog!=null&&hintDialog.isShowing()){
+				hintDialog.dismiss();
+			}
+		}
+	}
+
+	/**
+     * 核销
+     */
+	private void writeOffResStr(String jsonStr){
+        try {
+            JSONObject job = new JSONObject(jsonStr);
+            String status = job.getString("status");
+            String message = job.getString("message");
+            if("200".equals(status)){
+                String dataJson = job.getString("data");
+                Gson gson  =  GsonUtils.getGson();
+                WriteOffResData writeOffResData = gson.fromJson(dataJson, WriteOffResData.class);
+				/**
+				 * 下面是调用帮助类将一个对象以序列化的方式保存
+				 * 方便我们在其他界面调用，类似于Intent携带数据
+				 */
+				try {
+					MySerialize.saveObject("writeOffOrder",getApplicationContext(),MySerialize.serialize(writeOffResData));
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				//本地保存扫码支付返回数据（扫码重打印判断是否有支付记录数据以及,使用的支付通道和判断是支付还是退款）
+				SharedPreferencesUtil sharedPreferencesUtil = new SharedPreferencesUtil(getContext(), "writeOff");
+				Boolean scanPayValue = true;
+				sharedPreferencesUtil.put("scanPayYes", scanPayValue);
+
+
+                //打印核销小票
+                printWiteOffTicket(writeOffResData);
+				Toast.makeText(context, "核销成功！", Toast.LENGTH_LONG).show();
+            }else{
+                if(hintDialog!=null&&hintDialog.isShowing()){
+                    hintDialog.dismiss();
+                }
+                if(Utils.isNotEmpty(message)){
+                    Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(context, "核销失败！", Toast.LENGTH_LONG).show();
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(context, "核销失败！", Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+			e.printStackTrace();
+			Toast.makeText(context, "核销失败！", Toast.LENGTH_LONG).show();
+		}
+
+    }
+	/**
+	 * 核销
+	 */
+	private void consumeCodeJsonStr(String jsonStr){
+		try {
+			JSONObject job = new JSONObject(jsonStr);
+			String code = job.getString("code");
+			String msg = job.getString("msg");
+			if("000000".equals(code)){
+				String subCode = job.getString("subCode");
+				String subMsg = job.getString("subMsg");
+				if("000000".equals(subCode)){
+					String dataJson = job.getString("data");
+					Gson gson  =  GsonUtils.getGson();
+					WriteOffResData writeOffResData = gson.fromJson(dataJson, WriteOffResData.class);
+					/**
+					 * 下面是调用帮助类将一个对象以序列化的方式保存
+					 * 方便我们在其他界面调用，类似于Intent携带数据
+					 */
+					try {
+						MySerialize.saveObject("writeOffOrder",getApplicationContext(),MySerialize.serialize(writeOffResData));
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
+					//本地保存扫码支付返回数据（扫码重打印判断是否有支付记录数据以及,使用的支付通道和判断是支付还是退款）
+					SharedPreferencesUtil sharedPreferencesUtil = new SharedPreferencesUtil(getContext(), "writeOff");
+					Boolean scanPayValue = true;
+					sharedPreferencesUtil.put("scanPayYes", scanPayValue);
+
+
+					//打印核销小票
+					printWiteOffTicket(writeOffResData);
+					Toast.makeText(context, "核销成功！", Toast.LENGTH_LONG).show();
+				}else{
+					if(Utils.isNotEmpty(subMsg)){
+						Toast.makeText(activity, subMsg, Toast.LENGTH_LONG).show();
+					}else{
+						Toast.makeText(activity, "核销失败！", Toast.LENGTH_LONG).show();
+					}
+				}
+
+			}else{
+				if(Utils.isNotEmpty(msg)){
+					Toast.makeText(activity, msg, Toast.LENGTH_LONG).show();
+				}else{
+					Toast.makeText(activity, "核销失败！", Toast.LENGTH_LONG).show();
+				}
+			}
+		} catch (JSONException e) {
+			e.printStackTrace();
+			Toast.makeText(activity, "核销失败！", Toast.LENGTH_LONG).show();
+		}catch (Exception e){
+			e.printStackTrace();
+			Toast.makeText(activity, "核销失败！", Toast.LENGTH_LONG).show();
+		}
+
+	}
+
+    /**
+     * 打印核销小票
+     */
+    private void printWiteOffTicket(WriteOffResData writeOffResData){
+        if(Constants.NEW_LAND.equals(posProvider)){
+			/**
+			 * isMakeUp:是否为补打，""正常打印，"C"重打印
+			 */
+			String isMakeUp = "";
+			NewlandPrintUtil.writeOffPrintText(activity,aidlPrinter,writeOffResData,posPublicData,isMakeUp);
+        }else if(Constants.FUYOU_SF.equals(posProvider)){
+        	/**
+			 * isMakeUp:是否为补打，""正常打印，"C"重打印
+			 */
+        	String isMakeUp = "";
+            FuyouPrintUtil.writeOffPrintText(activity,printService,writeOffResData,posPublicData,isMakeUp);
+        }
+    }
+	
+
+	@Override
+	public void onClick(View v) {
+		Intent in = null;
+		switch (v.getId()) {
+		case R.id.title_imageBack:
+			finish();
+			break;
+		case R.id.title_tvFunction:
+			in = new Intent();
+			if(sign.equals("1")){
+				in.setClass(activity,WriteOffRecodeListActivity.class);
+			}else if(sign.equals("2")){
+				in.setClass(activity,CardVerificaRecodeActivity.class);
+			}
+
+			in.putExtra("userLoginData",posPublicData);
+			in.putExtra("sign",sign);
+			startActivity(in);
+			break;
+		case R.id.write_off_imagScan:
+			etOrderId.setText("");
+			if(posProvider.equals(Constants.NEW_LAND)){
+				initScanner();
+				if(cameType){
+					Log.e("扫码调用：", "后置摄像头");
+					backscan();
+				}else{
+					Log.e("扫码调用：", "前置摄像头");
+					frontscan();
+				}
+			}else if(posProvider.equals(Constants.FUYOU_SF)){
+				Intent intent = new Intent();
+				intent.setComponent(new ComponentName("com.fuyousf.android.fuious",
+						"com.fuyousf.android.fuious.NewSetScanCodeActivity"));
+				intent.putExtra("flag", "true");
+				startActivityForResult(intent, 11);
+			}
+
+			
+			break;
+		case R.id.write_off_tvOk:
+			if(Utils.isFastClick()){
+				return;
+			}
+			getWriteOffQueryCode();
+			break;
+		}
+	}
+
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		Bundle bundle=data.getExtras();
+		if (requestCode == 11&&bundle != null) {
+			switch (resultCode) {
+				// 退款成功
+				case Activity.RESULT_OK:
+					if(posProvider.equals(Constants.NEW_LAND)){
+
+					}else if(posProvider.equals(Constants.FUYOU_SF)){
+						scanCodeStr = bundle.getString("return_txt");//扫码返回数据
+						Log.e("扫描返回扫描结果：", scanCodeStr);
+						etOrderId.setText(scanCodeStr);
+					}
+
+					break;
+				// 支付取消
+				case Activity.RESULT_CANCELED:
+					Toast.makeText(context, "扫码失败！", Toast.LENGTH_LONG).show();
+					break;
+
+			}
+		}
+	}
+}

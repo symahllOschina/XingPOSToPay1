@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">悦收银</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="scan_text">将二维码/条码放入框内，即可自动扫描</string>
+    
+    <string name="cancle">取消</string>
+    <string name="title">请选择时间</string>
+    <string name="commit">确定</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    <string name="hour">时</string>
+    <string name="minute">分</string>
+    
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">最近更新：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="xlistview_footer_hint_nomore">没有更多</string>
+
+
+    <string name="instalment_refund_hint_title1">1,商户退款流程</string>
+    <string name="instalment_refund_hint_msg1">*商户线下与消费者（持卡人）达成退款约定；</string>
+    <string name="instalment_refund_hint_msg2">*商户在app中输入原分期订单号提交退款申请；</string>
+    <string name="instalment_refund_hint_msg3">*星POS平台将对商户提交的申请进行相关的审核；</string>
+    <string name="instalment_refund_hint_msg4">*商户在app的‘查询’功能中可查询审核进度</string>
+    <string name="instalment_refund_hint_msg5">*审核通过后，商户需将款项打到指定的账户并上传转账凭证；</string>
+    <string name="instalment_refund_hint_msg6">*商户可在app中查询退款进度</string>
+    <string name="instalment_refund_hint_title2">2,退款规则说明</string>
+    <string name="instalment_refund_hint_msg11">*自持卡人成功办分期业务次日起7个自然日内，可以申请退款，超过7个自然日的，需收取每日0.03%的退款手续费，具体计算方式为：退款手续费 = 分期总额*（交易成功天数-7）*0.03%，其中已交易成功天数为交易成功通知日起至申请退款日当天的天数；</string>
+    <string name="instalment_refund_hint_msg22">*超过45个自然日的交易，不允许退款；</string>
+
+    <string name="bind_alias">绑定别名</string>
+    <string name="bind_alias_unknown_exception">绑定别名失败，未知异常</string>
+    <string name="bind_alias_success">绑定别名成功</string>
+    <string name="bind_alias_error_frequency">绑定别名失败，请求频次超限</string>
+    <string name="bind_alias_error_param_error">绑定别名失败，参数错误</string>
+    <string name="bind_alias_error_request_filter">绑定别名失败，请求被过滤</string>
+    <string name="bind_alias_error_cid_lost">绑定别名失败，未获取到cid</string>
+    <string name="bind_alias_error_connect_lost">绑定别名失败，网络错误</string>
+    <string name="bind_alias_error_alias_invalid">绑定别名失败，别名无效</string>
+    <string name="bind_alias_error_sn_invalid">绑定别名失败，sn无效</string>
+    <string name="unbind_alias">解绑别名</string>
+    <string name="unbind_alias_unknown_exception">取消绑定别名失败，未知异常</string>
+    <string name="unbind_alias_success">取消绑定别名成功</string>
+    <string name="unbind_alias_error_frequency">取消绑定别名失败，请求频次超限</string>
+    <string name="unbind_alias_error_param_error">取消绑定别名失败，参数错误</string>
+    <string name="unbind_alias_error_request_filter">取消绑定别名失败，请求被过滤</string>
+    <string name="unbind_alias_error_cid_lost">取消绑定别名失败，未获取到cid</string>
+    <string name="unbind_alias_error_connect_lost">取消绑定别名失败，网络错误</string>
+    <string name="unbind_alias_error_alias_invalid">取消绑定别名失败，别名无效</string>
+    <string name="unbind_alias_error_sn_invalid">取消绑定别名失败，sn无效</string>
+    <string name="add_tag">添加标签</string>
+    <string name="add_tag_unknown_exception">设置标签失败，未知异常</string>
+    <string name="add_tag_success">接口调用成功</string>
+    <string name="add_tag_error_count">接口调用失败, tag数量过大, 最大不能超过200个</string>
+    <string name="add_tag_error_frequency">设置标签失败，频率过快</string>
+    <string name="add_tag_error_null">接口调用失败, tag 为空</string>
+    <string name="add_tag_error_repeat">设置标签失败, 标签重复</string>
+    <string name="add_tag_error_unbind">设置标签失败, 服务未初始化成功</string>
+    <string name="add_tag_error_not_online">还未登陆成功</string>
+    <string name="add_tag_error_black_list">该应用已经在黑名单中,请联系售后支持!</string>
+    <string name="add_tag_error_exceed">已存 tag 超过限制</string>
+
+    <string name="push_transmission_data">收到一条透传测试消息</string>
+
+
+    <string name="order_list_item_orderId">订单号：%1$s</string>
+    <string name="order_list_item_orderPayTime">2019-08-21 10:21:21</string>
+    <string name="order_list_item_orderPayTotal">￥%1$s</string>
+    <string name="order_list_item_orderPayStatus">支付成功</string>
+
+    <string name="auth_manage_auth">预授权</string>
+    <string name="auth_total_fee">授权金额</string>
+    <string name="auth_brush_face_auth">刷脸预授权</string>
+    <string name="auth_manage_authCancel">预授权撤销</string>
+    <string name="auth_manage_authConfirm">预授权完成</string>
+    <string name="auth_manage_authConfirmCancel">预授权完成撤销</string>
+
+    <string name="auth_manage_authRecode">预授权交易记录</string>
+
+
+</resources>

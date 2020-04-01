@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.wanding.xingpos.MainActivity"
+    android:orientation="vertical"
+    android:background="@color/white_f3f7fd"
+    >
+    <EditText
+        android:id="@+id/content_layout_etSumMoney"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
+        android:gravity="right"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:hint="￥0.00"
+        android:textColorHint="@color/yellow_feb60f"
+        android:text=""
+        android:textSize="@dimen/text_size30"
+        android:textColor="@color/yellow_feb60f"
+        android:background="@null"
+        android:maxLength="10"
+         />
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/white_grey_radiu0"
+        >
+        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="80dp"
+	        android:orientation="horizontal"
+	        >
+	        <Button
+	            android:id="@+id/content_layout_tvSeven"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:background="@null"
+	            android:text="7"
+	            android:textSize="@dimen/text_size22"
+	            android:textColor="@color/black_333"
+	            android:textStyle="bold"
+	            />
+	        
+			<View 
+			    style="@style/divider_line1dp_h"
+			    />
+	        <Button
+	            android:id="@+id/content_layout_tvEight"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:background="@null"
+	            android:text="8"
+	            android:textSize="@dimen/text_size22"
+	            android:textColor="@color/black_333"
+	            android:textStyle="bold"
+	            />
+	        
+	        <View 
+			    style="@style/divider_line1dp_h"
+			    />
+	
+	        <Button
+	            android:id="@+id/content_layout_tvNine"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:background="@null"
+	            android:text="9"
+	            android:textSize="@dimen/text_size22"
+	            android:textColor="@color/black_333"
+	            android:textStyle="bold"
+	            />
+	        
+	        <View 
+			    style="@style/divider_line1dp_h"
+			    />
+	
+	        <ImageButton
+	            android:id="@+id/content_layout_imagEliminate"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:src="@drawable/del_icon"
+	            android:background="@null"
+	            android:textSize="@dimen/text_size22"
+	            android:textColor="@color/black_333"
+	            android:textStyle="bold"
+	            />
+	    </LinearLayout>
+	    <View
+	        style="@style/divider_line1dp"   
+	        ></View>
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="80dp"
+	        android:orientation="horizontal"
+	        >
+	        <Button
+	            android:id="@+id/content_layout_tvFour"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:background="@null"
+	            android:text="4"
+	            android:textSize="@dimen/text_size22"
+	            android:textColor="@color/black_333"
+	            android:textStyle="bold"
+	            />
+	        
+	        <View 
+			    style="@style/divider_line1dp_h"
+			    />
+	
+	        <Button
+	            android:id="@+id/content_layout_tvFive"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:background="@null"
+	            android:text="5"
+	            android:textSize="@dimen/text_size22"
+	            android:textColor="@color/black_333"
+	            android:textStyle="bold"
+	            />
+	        
+	        <View 
+			    style="@style/divider_line1dp_h"
+			    />
+	
+	        <Button
+	            android:id="@+id/content_layout_tvSix"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:background="@null"
+	            android:text="6"
+	            android:textSize="@dimen/text_size22"
+	            android:textColor="@color/black_333"
+	            android:textStyle="bold"
+	            />
+	        
+	        <View 
+			    style="@style/divider_line1dp_h"
+			    />
+	
+	        <Button
+	            android:id="@+id/content_layout_tvSpot"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:background="@null"
+	            android:text="."
+	            android:textSize="@dimen/text_size22"
+	            android:textColor="@color/black_333"
+	            android:textStyle="bold"
+	            />
+	    </LinearLayout>
+		<View
+	        style="@style/divider_line1dp"   
+	        ></View>
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="80dp"
+	        android:orientation="horizontal"
+	        >
+	        <Button
+	            android:id="@+id/content_layout_tvOne"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:background="@null"
+	            android:text="1"
+	            android:textSize="@dimen/text_size22"
+	            android:textColor="@color/black_333"
+	            android:textStyle="bold"
+	            />
+	        
+	        <View 
+			    style="@style/divider_line1dp_h"
+			    />
+	
+	        <Button
+	            android:id="@+id/content_layout_tvTwo"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:background="@null"
+	            android:text="2"
+	            android:textSize="@dimen/text_size22"
+	            android:textColor="@color/black_333"
+	            android:textStyle="bold"
+	            />
+	        
+	        <View 
+			    style="@style/divider_line1dp_h"
+			    />
+	
+	        <Button
+	            android:id="@+id/content_layout_tvThree"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:background="@null"
+	            android:text="3"
+	            android:textSize="@dimen/text_size22"
+	            android:textColor="@color/black_333"
+	            android:textStyle="bold"
+	            />
+	        
+	        <View 
+			    style="@style/divider_line1dp_h"
+			    />
+	
+	        <Button
+	            android:id="@+id/content_layout_tvZero"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:background="@null"
+	            android:text="0"
+	            android:textSize="@dimen/text_size22"
+	            android:textColor="@color/black_333"
+	            android:textStyle="bold"
+	            />
+	    </LinearLayout>
+    </LinearLayout>
+    
+    
+
+
+        <!-- 占用2列,用“android:layout_gravity="fill"”必要的时候增加对象的横纵向大小，使其完全充满其容器.
+            用android:layout_columnWeight="1" 也可达到同样效果-->
+        <!-- 占用2行-->
+        <!-- 用layout_rowWeight属性也可以达到上述效果-->
+        <!--<Button
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_rowSpan="2"
+            android:text="+"/>
+            -->
+        <!-- 占用3列  用android:layout_columnWeight="1" 也可达到同样效果-->
+
+
+</LinearLayout>

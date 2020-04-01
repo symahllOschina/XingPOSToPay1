@@ -1,0 +1,18 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wanding.xingpos.MainActivity" 
+    android:orientation="vertical"
+    >
+    
+    <!-- 顶部Tab -->
+    <include layout="@layout/main_top_title_layout" />
+    <!-- 内容区域 -->
+    <com.wanding.xingpos.view.ControlScrollViewPager 
+        android:id="@+id/main_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        ></com.wanding.xingpos.view.ControlScrollViewPager>
+</LinearLayout>

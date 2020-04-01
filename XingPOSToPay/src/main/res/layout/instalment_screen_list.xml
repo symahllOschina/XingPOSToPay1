@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <include layout="@layout/title_activity"/>
+    <View style="@style/divider_line1dp"/>
+    <include layout="@layout/select_datetime_layout"/>
+    <View style="@style/divider_line1dp"/>
+    <include layout="@layout/instalment_screen_list_title"/>
+    <View style="@style/divider_line1dp"/>
+    <!-- 内容区域 -->
+    <com.wanding.xingpos.view.ControlScrollViewPager
+        android:id="@+id/instalment_screen_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        ></com.wanding.xingpos.view.ControlScrollViewPager>
+</LinearLayout>

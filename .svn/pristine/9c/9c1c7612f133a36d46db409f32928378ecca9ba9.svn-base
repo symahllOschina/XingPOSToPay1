@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <color name="touming">#00000000</color>
+    <!-- 白色，灰白色 -->
+    <color name="white_ffffff">#ffffff</color>
+    <color name="white_f8f8f8">#f8f8f8</color>
+    <color name="white_f2f2f2">#f2f2f2</color>
+    <color name="white_dadada">#dadada</color>
+    <color name="white_f3f7fd">#f3f7fd</color>
+    <!-- 灰色透明 -->
+     <color name="half_transparent">#99000000</color>
+    <color name="transparent">#00000000</color>
+    <!-- 深灰色 -->
+    <color name="grey_f6f6f6">#f6f6f6</color>
+    <color name="grey_666666">#666666</color>
+    <color name="gray_e5e5e5">#e5e5e5</color>
+    <color name="gray_999">#999</color>
+    <color name="grey_676767">#676767</color>
+    <color name="grey_b0000000">#b0000000</color>
+    <!-- 蓝色 -->
+    <color name="blue_B0C4DE">#B0C4DE</color>
+    <color name="blue_409EFF">#409EFF</color>
+    <!-- 黑色 -->
+    <color name="black_000000">#000000</color>
+    <color name="black_333">#333</color>
+    <!-- 红色 -->
+    <color name="red_FF4400">#FF4400</color>
+    <color name="red_FF1200">#FF1200</color>
+    <color name="red_df5456">#df5456</color>
+     <color name="red_d05450">#d05450</color>
+    <color name="red_ff5355">#ff5355</color>
+    <color name="red_f56c6c">#f56c6c</color>
+    <!-- 黄色，蜡黄色 -->
+    <color name="yellow_ffd800">#ffd800</color>
+    <color name="yellow_492a13">#492a13</color>
+    <color name="yellow_e59623">#e59623</color>
+    <color name="yellow_e79824">#e79824</color>
+    <color name="yellow_e79823">#e79823</color>
+    <color name="yellow_f8e9d2">#f8e9d2</color>
+    <color name="yellow_feb60f">#feb60f</color>
+    
+    <!-- 首页用到背景色 -->
+    <color name="home_top_name_bg232c3b">#232c3b</color>
+    <color name="main_tab_text_e79723">#e79723</color>
+    <color name="main_tab_text_9a9a9a">#9a9a9a</color>
+    <!-- 报名：确认报名bg -->
+    <color name="confrim_signup_de5355">#de5355</color>
+    <color name="confrim_signup_424242">#424242</color>
+    
+    <!-- 扫描二维码 -->
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="possible_result_points">#c0ffff00</color>  
+    <color name="viewfinder_frame">#ff000000</color>
+    <!-- 绿色  -->
+    <color name="green_30d60a">#30d60a</color>
+    <color name="green_65db4e">#65db4e</color>
+    <color name="green_008000">#008000</color>
+    <color name="green_006400">#006400</color>
+    
+    <!-- 以下为日期时间选择控件颜色定义值 -->
+    <color name="color_unit">#F0F0F0</color>
+    <color name="color_item_bg">#FFFFFF</color>
+    <color name="color_text_unselected">#30d60a</color>
+    <color name="color_desc">#65db4e</color>
+    <color name="color_result">#57C5E8</color>
+    <color name="color_bg">#006400</color>
+    <color name="color_gold">#f2f2f2</color>
+    
+</resources>

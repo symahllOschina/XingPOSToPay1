@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="horizontal"
+    android:background="@drawable/main_title_bg"
+    >
+    <TextView
+        android:id="@+id/instalment_title_tvPay"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="分期"
+        android:textSize="@dimen/text_size16"
+        android:textColor="@color/white_ffffff"
+        android:gravity="center"
+
+        />
+    <TextView
+        android:id="@+id/instalment_title_tvRefund"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="退款"
+        android:textSize="@dimen/text_size16"
+        android:textColor="@color/white_ffffff"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/instalment_title_tvQuery"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="查询"
+        android:textSize="@dimen/text_size16"
+        android:textColor="@color/white_ffffff"
+        android:gravity="center"
+        />
+</LinearLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white_ffffff"
+    android:paddingLeft="5dp"
+    android:paddingRight="0dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:id="@+id/buy_card_recode_list_item_cententLayout"
+    >
+    <ImageView
+        android:id="@+id/buy_card_recode_list_item_nextImg"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/next_icon"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@id/buy_card_recode_list_item_nextImg"
+        android:orientation="horizontal"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="订单号："
+                    android:textColor="@color/gray_666666"
+                    android:textSize="@dimen/text_siz12" />
+
+                <TextView
+                    android:id="@+id/buy_card_recode_list_item_tvOrderId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/gray_666666"
+                    android:textSize="@dimen/text_siz12" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                >
+                <TextView
+                    android:id="@+id/buy_card_recode_list_item_tvCreateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/gray_666666"
+                    android:textSize="@dimen/text_siz12" />
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            style="@style/divider_line1dp_h"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/buy_card_recode_list_item_tvTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥0.00"
+                android:textColor="@color/red_d05450"
+                android:textSize="@dimen/text_siz12" />
+            <TextView
+                android:id="@+id/buy_card_recode_list_item_tvState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/gray_999"
+                android:textSize="@dimen/text_siz12"
+                android:layout_marginTop="5dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
